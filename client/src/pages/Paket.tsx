@@ -1,0 +1,227 @@
+import { useState } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import PackageCard from "@/components/PackageCard";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Search } from "lucide-react";
+import hotelImage from "@assets/generated_images/Luxury_Mecca_hotel_room_f42f9135.png";
+
+export default function Paket() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filterAirline, setFilterAirline] = useState("all");
+  const [filterStatus, setFilterStatus] = useState("all");
+  const [filterPrice, setFilterPrice] = useState("all");
+
+  const allPackages = [
+    {
+      id: "1",
+      name: "Paket Umroh Ramadhan Premium",
+      destination: "Makkah - Madinah",
+      duration: 12,
+      departureDate: "15 Maret 2024",
+      airline: "Garuda Indonesia",
+      priceQuad: 28500000,
+      availableSlots: 15,
+      totalSlots: 40,
+      status: "open" as const,
+      imageUrl: hotelImage,
+    },
+    {
+      id: "2",
+      name: "Paket Umroh Plus Turki",
+      destination: "Makkah - Madinah - Istanbul",
+      duration: 16,
+      departureDate: "20 April 2024",
+      airline: "Turkish Airlines",
+      priceQuad: 35000000,
+      availableSlots: 5,
+      totalSlots: 30,
+      status: "limited" as const,
+      imageUrl: hotelImage,
+    },
+    {
+      id: "3",
+      name: "Paket Umroh Hemat",
+      destination: "Makkah - Madinah",
+      duration: 9,
+      departureDate: "10 Mei 2024",
+      airline: "Saudia Airlines",
+      priceQuad: 22000000,
+      availableSlots: 25,
+      totalSlots: 45,
+      status: "open" as const,
+      imageUrl: hotelImage,
+    },
+    {
+      id: "4",
+      name: "Paket Umroh VIP",
+      destination: "Makkah - Madinah",
+      duration: 10,
+      departureDate: "5 Juni 2024",
+      airline: "Garuda Indonesia",
+      priceQuad: 42000000,
+      availableSlots: 8,
+      totalSlots: 20,
+      status: "limited" as const,
+      imageUrl: hotelImage,
+    },
+    {
+      id: "5",
+      name: "Paket Umroh Reguler",
+      destination: "Makkah - Madinah",
+      duration: 9,
+      departureDate: "15 Juli 2024",
+      airline: "Lion Air",
+      priceQuad: 24000000,
+      availableSlots: 0,
+      totalSlots: 35,
+      status: "full" as const,
+      imageUrl: hotelImage,
+    },
+    {
+      id: "6",
+      name: "Paket Umroh Awal Tahun",
+      destination: "Makkah - Madinah",
+      duration: 11,
+      departureDate: "20 Agustus 2024",
+      airline: "Saudia Airlines",
+      priceQuad: 26500000,
+      availableSlots: 30,
+      totalSlots: 40,
+      status: "open" as const,
+      imageUrl: hotelImage,
+    },
+  ];
+
+  const filteredPackages = allPackages.filter((pkg) => {
+    const matchesSearch = pkg.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         pkg.destination.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesAirline = filterAirline === "all" || pkg.airline === filterAirline;
+    const matchesStatus = filterStatus === "all" || pkg.status === filterStatus;
+    const matchesPrice = filterPrice === "all" || 
+      (filterPrice === "low" && pkg.priceQuad < 25000000) ||
+      (filterPrice === "medium" && pkg.priceQuad >= 25000000 && pkg.priceQuad < 35000000) ||
+      (filterPrice === "high" && pkg.priceQuad >= 35000000);
+
+    return matchesSearch && matchesAirline && matchesStatus && matchesPrice;
+  });
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      
+      <div className="bg-primary text-primary-foreground py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">Paket Umroh</h1>
+          <p className="text-lg opacity-90">
+            Pilih paket umroh terbaik untuk perjalanan spiritual Anda
+          </p>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid lg:grid-cols-4 gap-8">
+          <aside className="lg:col-span-1">
+            <Card>
+              <CardHeader>
+                <CardTitle>Filter Paket</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div>
+                  <Label htmlFor="search">Cari Paket</Label>
+                  <div className="relative mt-2">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                    <Input
+                      id="search"
+                      type="search"
+                      placeholder="Cari nama paket..."
+                      className="pl-10"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      data-testid="input-search-package"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <Label htmlFor="airline">Maskapai</Label>
+                  <Select value={filterAirline} onValueChange={setFilterAirline}>
+                    <SelectTrigger id="airline" className="mt-2" data-testid="select-airline">
+                      <SelectValue placeholder="Pilih maskapai" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">Semua Maskapai</SelectItem>
+                      <SelectItem value="Garuda Indonesia">Garuda Indonesia</SelectItem>
+                      <SelectItem value="Saudia Airlines">Saudia Airlines</SelectItem>
+                      <SelectItem value="Turkish Airlines">Turkish Airlines</SelectItem>
+                      <SelectItem value="Lion Air">Lion Air</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <Label htmlFor="status">Status Ketersediaan</Label>
+                  <Select value={filterStatus} onValueChange={setFilterStatus}>
+                    <SelectTrigger id="status" className="mt-2" data-testid="select-status">
+                      <SelectValue placeholder="Pilih status" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">Semua Status</SelectItem>
+                      <SelectItem value="open">Tersedia</SelectItem>
+                      <SelectItem value="limited">Terbatas</SelectItem>
+                      <SelectItem value="full">Penuh</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <Label htmlFor="price">Harga</Label>
+                  <Select value={filterPrice} onValueChange={setFilterPrice}>
+                    <SelectTrigger id="price" className="mt-2" data-testid="select-price">
+                      <SelectValue placeholder="Pilih rentang harga" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">Semua Harga</SelectItem>
+                      <SelectItem value="low">&lt; 25 Juta</SelectItem>
+                      <SelectItem value="medium">25 - 35 Juta</SelectItem>
+                      <SelectItem value="high">&gt; 35 Juta</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </CardContent>
+            </Card>
+          </aside>
+
+          <div className="lg:col-span-3">
+            <div className="mb-6">
+              <p className="text-muted-foreground">
+                Menampilkan {filteredPackages.length} dari {allPackages.length} paket
+              </p>
+            </div>
+
+            {filteredPackages.length > 0 ? (
+              <div className="grid md:grid-cols-2 gap-6">
+                {filteredPackages.map((pkg) => (
+                  <PackageCard key={pkg.id} {...pkg} />
+                ))}
+              </div>
+            ) : (
+              <Card>
+                <CardContent className="py-12 text-center">
+                  <p className="text-muted-foreground">
+                    Tidak ada paket yang sesuai dengan filter Anda
+                  </p>
+                </CardContent>
+              </Card>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <Footer />
+    </div>
+  );
+}
