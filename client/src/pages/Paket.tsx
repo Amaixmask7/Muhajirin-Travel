@@ -7,7 +7,11 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Search } from "lucide-react";
-import hotelImage from "@assets/generated_images/Luxury_Mecca_hotel_room_f42f9135.png";
+import hotelImage1 from "@assets/generated_images/Luxury_hotel_Mecca_night_view_66f35bf8.png";
+import hotelImage2 from "@assets/generated_images/Masjid_Nabawi_interior_b6a3a284.png";
+import hotelImage3 from "@assets/generated_images/Airplane_sunset_clouds_0ee351f6.png";
+import hotelImage4 from "@assets/generated_images/Blue_Mosque_Istanbul_64eff276.png";
+import hotelImage5 from "@assets/generated_images/Luxury_Mecca_hotel_room_f42f9135.png";
 
 export default function Paket() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -27,7 +31,7 @@ export default function Paket() {
       availableSlots: 15,
       totalSlots: 40,
       status: "open" as const,
-      imageUrl: hotelImage,
+      imageUrl: hotelImage1,
     },
     {
       id: "2",
@@ -40,7 +44,7 @@ export default function Paket() {
       availableSlots: 5,
       totalSlots: 30,
       status: "limited" as const,
-      imageUrl: hotelImage,
+      imageUrl: hotelImage4,
     },
     {
       id: "3",
@@ -53,46 +57,72 @@ export default function Paket() {
       availableSlots: 25,
       totalSlots: 45,
       status: "open" as const,
-      imageUrl: hotelImage,
+      imageUrl: hotelImage2,
     },
     {
       id: "4",
-      name: "Paket Umroh VIP",
+      name: "Paket Umroh VIP Executive",
       destination: "Makkah - Madinah",
       duration: 10,
-      departureDate: "5 Juni 2024",
-      airline: "Garuda Indonesia",
-      priceQuad: 42000000,
+      departureDate: "25 Juni 2024",
+      airline: "Emirates",
+      priceQuad: 45000000,
       availableSlots: 8,
       totalSlots: 20,
       status: "limited" as const,
-      imageUrl: hotelImage,
+      imageUrl: hotelImage5,
     },
     {
       id: "5",
       name: "Paket Umroh Reguler",
       destination: "Makkah - Madinah",
       duration: 9,
-      departureDate: "15 Juli 2024",
+      departureDate: "5 Juli 2024",
       airline: "Lion Air",
-      priceQuad: 24000000,
-      availableSlots: 0,
-      totalSlots: 35,
-      status: "full" as const,
-      imageUrl: hotelImage,
+      priceQuad: 20000000,
+      availableSlots: 30,
+      totalSlots: 50,
+      status: "open" as const,
+      imageUrl: hotelImage3,
     },
     {
       id: "6",
-      name: "Paket Umroh Awal Tahun",
+      name: "Paket Umroh Syawal",
       destination: "Makkah - Madinah",
       duration: 11,
-      departureDate: "20 Agustus 2024",
-      airline: "Saudia Airlines",
-      priceQuad: 26500000,
-      availableSlots: 30,
+      departureDate: "10 Agustus 2024",
+      airline: "Qatar Airways",
+      priceQuad: 32000000,
+      availableSlots: 12,
+      totalSlots: 35,
+      status: "open" as const,
+      imageUrl: hotelImage1,
+    },
+    {
+      id: "7",
+      name: "Paket Umroh Plus Dubai",
+      destination: "Makkah - Madinah - Dubai",
+      duration: 14,
+      departureDate: "15 September 2024",
+      airline: "Emirates",
+      priceQuad: 38000000,
+      availableSlots: 18,
       totalSlots: 40,
       status: "open" as const,
-      imageUrl: hotelImage,
+      imageUrl: hotelImage3,
+    },
+    {
+      id: "8",
+      name: "Paket Umroh Keluarga",
+      destination: "Makkah - Madinah",
+      duration: 10,
+      departureDate: "1 Oktober 2024",
+      airline: "Garuda Indonesia",
+      priceQuad: 25000000,
+      availableSlots: 0,
+      totalSlots: 45,
+      status: "full" as const,
+      imageUrl: hotelImage5,
     },
   ];
 
@@ -158,6 +188,8 @@ export default function Paket() {
                       <SelectItem value="Saudia Airlines">Saudia Airlines</SelectItem>
                       <SelectItem value="Turkish Airlines">Turkish Airlines</SelectItem>
                       <SelectItem value="Lion Air">Lion Air</SelectItem>
+                      <SelectItem value="Emirates">Emirates</SelectItem>
+                      <SelectItem value="Qatar Airways">Qatar Airways</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
