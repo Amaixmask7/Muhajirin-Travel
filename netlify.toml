@@ -1,0 +1,28 @@
+[build]
+  # This command builds both the frontend and backend
+  command = "npm run build"
+  
+  # This is the directory that Netlify will deploy
+  publish = "dist/public"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Redirect all API requests to the serverless function
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/server"
+  status = 200
+
+# Redirect all other requests to the frontend
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[functions]
+  # Directory where serverless functions are located
+  directory = "netlify/functions"
+  
+  # Node.js version for functions
+  node_version = "18"
