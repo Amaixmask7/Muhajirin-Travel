@@ -23,6 +23,3 @@
 [functions]
   # Directory where serverless functions are located
   directory = "netlify/functions"
-  
-  # Node.js version for functions
-  node_version = "18"
