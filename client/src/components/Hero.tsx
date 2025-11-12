@@ -6,7 +6,7 @@ import heroImage from "@assets/generated_images/Aerial_Mecca_blue_hour_b8d073b4.
 
 export default function Hero() {
   return (
-    <div className="relative h-[700px] flex items-center justify-center overflow-hidden">
+    <div className="relative h-[700px] flex items-center justify-center overflow-hidden pt-16">
       <div 
         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
         style={{ backgroundImage: `url(${heroImage})` }}

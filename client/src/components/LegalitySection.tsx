@@ -57,22 +57,6 @@ export default function LegalitySection() {
             );
           })}
         </div>
-
-        <Card className="overflow-hidden">
-          <CardHeader>
-            <CardTitle className="text-center">Sertifikat Resmi</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="max-w-2xl mx-auto">
-              <img
-                src={certificateImg}
-                alt="Sertifikat Al-Muhajirin Travel"
-                className="w-full rounded-lg shadow-md"
-                data-testid="img-certificate"
-              />
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );
