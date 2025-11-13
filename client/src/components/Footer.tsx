@@ -7,7 +7,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Al-Muhajirin Travel</h3>
+            <Link href="/" aria-label="Al-Muhajirin Travel" className="inline-flex items-center">
+              <img
+                src="/almuhajirinlogo.png"
+                alt="Al-Muhajirin Travel"
+                className="h-20 w-auto mb-4"
+                loading="lazy"
+                decoding="async"
+              />
+            </Link>
             <p className="text-sm text-muted-foreground mb-4">
               Travel umroh dan haji terpercaya dengan layanan profesional dan bimbingan ibadah terbaik.
             </p>

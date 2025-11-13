@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Plane, Hotel, MapPin, CheckCircle, Users } from "lucide-react";
+import PageHeader from "@/components/PageHeader";
 import hotelImage from "@assets/generated_images/Luxury_Mecca_hotel_room_f42f9135.png";
 import madinahImage from "@assets/generated_images/Masjid_Nabawi_Medina_sunset_93a57e53.png";
 
@@ -117,17 +118,11 @@ export default function PaketDetail() {
     <div className="min-h-screen bg-background">
       <Navbar />
       
-      <div className="bg-primary text-primary-foreground py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold mb-2">{packageData.name}</h1>
-              <p className="text-lg opacity-90">{packageData.destination}</p>
-            </div>
-            <Badge className="bg-green-500 text-white">Tersedia</Badge>
-          </div>
-        </div>
-      </div>
+      <PageHeader
+        title={packageData.name}
+        subtitle={packageData.destination}
+        rightSlot={<Badge className="bg-green-500 text-white">Tersedia</Badge>}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid lg:grid-cols-3 gap-8">

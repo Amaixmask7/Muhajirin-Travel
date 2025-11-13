@@ -3,20 +3,17 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Mail, MessageCircle, Clock } from "lucide-react";
+import PageHeader from "@/components/PageHeader";
 
 export default function Hubungi() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       
-      <div className="bg-primary text-primary-foreground py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">Hubungi Kami</h1>
-          <p className="text-lg opacity-90">
-            Kami siap membantu menjawab pertanyaan dan melayani Anda
-          </p>
-        </div>
-      </div>
+      <PageHeader
+        title="Hubungi Kami"
+        subtitle="Kami siap membantu menjawab pertanyaan Anda"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-2 gap-12">

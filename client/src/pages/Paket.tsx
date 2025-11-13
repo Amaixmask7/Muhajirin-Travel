@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PackageCard from "@/components/PackageCard";
+import PageHeader from "@/components/PageHeader";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -142,15 +143,10 @@ export default function Paket() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
-      <div className="bg-primary text-primary-foreground py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">Paket Umroh</h1>
-          <p className="text-lg opacity-90">
-            Pilih paket umroh terbaik untuk perjalanan spiritual Anda
-          </p>
-        </div>
-      </div>
+      <PageHeader
+        title="Paket Umroh"
+        subtitle="Pilih paket umroh terbaik untuk perjalanan spiritual Anda"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid lg:grid-cols-4 gap-8">
