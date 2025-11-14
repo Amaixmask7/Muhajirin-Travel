@@ -9,7 +9,7 @@ interface PageHeaderProps {
 
 export default function PageHeader({ title, subtitle, rightSlot, className }: PageHeaderProps) {
   return (
-    <div className={`bg-primary text-primary-foreground py-16 ${className ?? ""}`}>
+    <div className={`bg-primary text-primary-foreground py-16 mt-12 ${className ?? ""}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {rightSlot ? (
           <div className="flex items-center justify-between">
