@@ -45,8 +45,7 @@ export default function Hero() {
           <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer">
             <Button 
               size="lg" 
-              variant="outline"
-              className="bg-white/20 backdrop-blur-md text-white border-white/40 hover:bg-white/30 shadow-xl text-lg px-8 py-6"
+              className="bg-green-600 hover:bg-green-700 text-white border-green-600 shadow-xl text-lg px-8 py-6 font-semibold"
               data-testid="button-konsultasi"
             >
               Konsultasi Gratis

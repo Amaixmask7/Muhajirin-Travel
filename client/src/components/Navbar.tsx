@@ -45,7 +45,7 @@ export default function Navbar() {
               </Link>
             ))}
             <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer">
-              <Button variant="secondary" size="sm" className="ml-2 text-black hover:bg-black/10" data-testid="button-whatsapp">
+              <Button size="sm" className="ml-2 bg-green-600 hover:bg-green-700 text-white font-semibold" data-testid="button-whatsapp">
                 <Phone className="w-4 h-4 mr-2" />
                 WhatsApp
               </Button>
@@ -82,7 +82,7 @@ export default function Navbar() {
               </Link>
             ))}
             <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" className="block">
-              <Button variant="ghost" size="sm" className="w-full text-black hover:bg-black/10" data-testid="button-mobile-whatsapp">
+              <Button size="sm" className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold" data-testid="button-mobile-whatsapp">
                 <Phone className="w-4 h-4 mr-2" />
                 WhatsApp
               </Button>

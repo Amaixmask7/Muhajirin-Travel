@@ -235,7 +235,7 @@ export default function Daftar() {
                   Kirim Pendaftaran
                 </Button>
                 <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" className="flex-1">
-                  <Button type="button" variant="outline" size="lg" className="w-full" data-testid="button-bantuan">
+                  <Button type="button" size="lg" className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold" data-testid="button-bantuan">
                     Butuh Bantuan?
                   </Button>
                 </a>

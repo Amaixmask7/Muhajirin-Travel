@@ -95,7 +95,7 @@ export default function Hubungi() {
                   </div>
                 </div>
                 <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full bg-green-600 hover:bg-green-700" data-testid="button-whatsapp-contact">
+                  <Button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold shadow-md" data-testid="button-whatsapp-contact">
                     <MessageCircle className="w-4 h-4 mr-2" />
                     Chat WhatsApp
                   </Button>

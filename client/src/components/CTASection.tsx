@@ -25,8 +25,7 @@ export default function CTASection() {
           <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer">
             <Button 
               size="lg" 
-              variant="outline"
-              className="bg-white/10 backdrop-blur-sm border-white/30"
+              className="bg-green-600 hover:bg-green-700 text-white border-green-600 shadow-lg"
               data-testid="button-cta-whatsapp"
             >
               <MessageCircle className="w-5 h-5 mr-2" />
@@ -36,8 +35,7 @@ export default function CTASection() {
           <a href="tel:+628123456789">
             <Button 
               size="lg" 
-              variant="outline"
-              className="bg-white/10 backdrop-blur-sm border-white/30"
+              className="bg-white text-primary hover:bg-white/90 border-white shadow-lg font-semibold"
               data-testid="button-cta-phone"
             >
               <Phone className="w-5 h-5 mr-2" />

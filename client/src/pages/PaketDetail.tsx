@@ -261,7 +261,7 @@ export default function PaketDetail() {
                     </Button>
                   </Link>
                   <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" className="block">
-                    <Button className="w-full" variant="outline" size="lg" data-testid="button-tanya-paket">
+                    <Button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold" size="lg" data-testid="button-tanya-paket">
                       Tanya Paket Ini
                     </Button>
                   </a>
